@@ -30,22 +30,22 @@ variable "region" {
 
 variable "database_tier" {
   type    = string
-  default = "db-custom-8-30720"
+  default = "db-f1-micro"
 
   description = "Size of the Cloud SQL tier. Set to db-custom-1-3840 or a smaller instance for local dev."
 }
 
 variable "database_disk_size_gb" {
   type    = number
-  default = 256
+  default = 16
 
   description = "Size of the Cloud SQL disk, in GB."
 }
 
 variable "database_max_connections" {
   type    = number
-  default = 100000
-
+  default = 10
+  
   description = "Maximum number of allowed connections. If you change to a smaller instance size, you must lower this number."
 }
 
@@ -127,14 +127,14 @@ variable "service_environment" {
 
 variable "vpc_access_connector_max_throughput" {
   type    = number
-  default = 1000
+  default = 300
 
   description = "Maximum provisioned traffic throughput in Mbps"
 }
 
 variable "redis_cache_size" {
   type    = number
-  default = 8
+  default = 1
 
   description = "Size of the Redis instance in GB."
 }
