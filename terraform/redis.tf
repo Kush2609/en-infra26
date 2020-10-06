@@ -14,7 +14,7 @@
 
 resource "google_redis_instance" "cache" {
   name           = var.redis_name
-  tier           = "STANDARD_HA"
+  tier           = "BASIC"
   memory_size_gb = var.redis_cache_size
 
   location_id             = var.redis_location
